@@ -8,10 +8,16 @@ app = Flask(__name__)
 
 
 @app.route("/")
-@app.route("/hello")
 # define the view using a function, which returns a string
-def hello_world():
+def hello_uruner():
     return "Hello, Urunner!"
+
+
+@app.route("/hello")
+def hello_world():
+    return "Hello, World!"
+
+
 # start the development server using the run() method
 
 
