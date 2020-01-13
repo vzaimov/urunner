@@ -18,6 +18,12 @@ def hello_world():
     return "Hello, World!"
 
 
+# dynamic route
+@app.route("/test/<search_query>")
+def search(search_query):
+    return search_query
+
+
 # start the development server using the run() method
 
 
