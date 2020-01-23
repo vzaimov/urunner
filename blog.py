@@ -3,11 +3,15 @@
 from flask import Flask, render_template, request, session, flash, redirect, url_for, g
 import sqlite3
 from functools import wraps
+from os import path
+
 # configuration
-DATABASE = 'urunner.db'
+ROOT = path.dirname(path.realpath(__file__))
+DATABASE = path.join(ROOT, 'urunner.db')
 USERNAME = 'admin'
 PASSWORD = 'admin'
 SECRET_KEY = 'hard_to_guess'
+
 
 app = Flask(__name__)
 # pulls in app configuration by looking for UPPERCASE variables
