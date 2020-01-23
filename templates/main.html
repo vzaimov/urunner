@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% block content %}
+    <h2>Welcome to the Flask Blog!</h2>
+    <p><a href="{{ url_for('logout') }}">Log out</a></p>
+    <h3>Add a new post:</h3>
+    <form action="{{ url_for('add') }}" method="post" class="add">
+        <div>
+            <label>Title:</label>
+            <input name="title" type="text">
+        </div>
+        <div>
+            <label>Event date:</label>
+            <input name="event date" type="text">
+        </div>
+        <div>
+            <label>Distance:</label>
+            <input name="distance" type="text">
+        </div>
+        <div>
+            <label>Total climbing (D+):</label>
+            <input name="total climbing" type="text">
+        </div>
+         <div>
+            <label>Time limit:</label>
+            <input name="time limit" type="text">
+        </div>
+         <div>
+            <label>ITRA points:</label>
+            <input name="itra points" type="text">
+        </div>
+         <div>
+            <label>UTMB points:</label>
+            <input name="utmb points" type="text">
+        </div>
+         <div>
+            <label>Info:</label>
+            <input name="info" type="text">
+        </div>
+         <div>
+            <label>Event link:</label>
+            <input name="event link" type="text">
+        </div>
+        <div class="">
+            <input class="button" type="submit" value="Save">
+        </div>
+    </form>
+    <br>
+    <br>
+    <h3>Posts:</h3>
+    {% for p in posts %}
+        <strong>Event:</strong> {{ p.title }} <br>
+        <strong>Details:</strong> {{ p.post }} <br>
+        <br>
+    {% endfor %}
+{% endblock %}
+
